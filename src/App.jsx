@@ -6,7 +6,7 @@ import { ListaUsuario } from './componentes/listaUsuarios/listaUsuario'
 import io from 'socket.io-client';
 import { useEffect, useState } from "react"
 
-  const socket = io('http://localhost:2000', {forceNew: true});
+  const socket = io('http://142.93.50.145:2000', {forceNew: true});
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
 
  async function optenerUsuarios () {
   try {
-    const res = await fetch('http://localhost:2000/api/chat/usuarios');
+    const res = await fetch('http://142.93.50.145:2000/api/chat/usuarios');
     const usuarios = await res.json();
     setUsuarios(usuarios.data)
 
@@ -33,7 +33,7 @@ function App() {
 
  async function optenerMensajes () {
   try {
-    const res = await fetch('http://localhost:2000/api/chat/mensajes');
+    const res = await fetch('http://142.93.50.145:2000/api/chat/mensajes');
     const mensajesApi = await res.json();
     setChats(mensajesApi.data)
 
