@@ -1,0 +1,74 @@
+.contenedorLista{
+    background-color:rgb(253, 253, 253);
+    width: 30%;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Roboto', sans-serif;
+    
+    
+}
+
+
+
+.contUsuario{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+}
+
+
+@media (max-width: 500px) {
+    .contenedorLista{
+        width: 20%;
+        overflow: hidden;
+        padding: 0;
+    }
+    .contUsuario{
+        overflow-y: scroll;
+    }
+
+    .cardUsuario{
+        display: flex;gap: 20px;
+    }
+}
+
+
+/** estilo para el escroll*/
+
+.contUsuario::-webkit-scrollbar{ 
+ 
+    width: 5px;
+  
+  }
+  .contUsuario::-webkit-scrollbar-track{
+    background: rgba(255, 255, 255, 0.096);
+  }
+  
+  .contUsuario::-webkit-scrollbar-thumb{
+    background: rgba(0, 0, 0, 0.216);
+  }
+  
+
+
+/** card usuario */
+
+.cardUsuario{
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.329);
+}
+
+.foto {
+    
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 100%;
+    padding: 10px;
+    background-color: white;
+}

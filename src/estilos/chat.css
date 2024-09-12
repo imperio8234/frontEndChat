@@ -1,0 +1,156 @@
+.contenedorChat{
+  display: flex;
+  flex-direction: column;  /* Para que los mensajes se apilen verticalmente */
+  gap: 10px;  /* Espacio entre las burbujas */
+  margin: 0 auto;  /* Centrar el contenedor de chat */
+  padding: 20px;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 75%;
+  height: 100%;
+  background-image: url('/public/imagenwp.jpeg');
+}
+
+
+.perfilChat {
+width: 100%;
+background-color: white;
+padding: 10px;
+border-left: 1px solid rgb(196, 196, 196);
+}
+
+
+
+.escrituraChat{
+padding: 10px;
+width: 100%;
+background-color: rgba(245, 245, 245, 0.377);
+box-shadow: 5px 10px 5px  rgb(170, 170, 170);
+border-radius: 10px;
+display: flex;
+align-items: center;
+backdrop-filter: blur(5px);
+
+}
+
+
+.btnE {
+    display: flex;
+}
+
+.escrituraChat input{
+    border-radius: 20px;
+    padding: 10px;
+    
+}
+
+
+#autoExpand {
+    width: 100%; /* Ajusta el ancho a tus necesidades */
+    min-height: 40px; /* Altura mínima */
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    overflow-y: hidden; /* Oculta la barra de desplazamiento vertical */
+    resize: none; /* Evita que el usuario redimensione manualmente */
+    border-radius: 20px;
+  }
+  
+
+  /** textos para el mensaje y manejo del chat*/
+
+  .mensaje1 {
+    background: #d8eff1;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+    max-width: 250px;
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: auto; /* Ajuste automático de la altura */
+    word-wrap: break-word; /* Romper palabras largas */
+    overflow-wrap: break-word; 
+    overflow-wrap: break-word; 
+    align-self: self-end;
+
+  }
+
+  
+
+  .mensaje2{
+    position: relative;
+    background: #00498d; /* Un color diferente para distinguir al otro usuario */
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    max-width: 250px;
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 10px;
+    margin-left: 40px; /* Empujar la burbuja hacia la derecha */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: auto; /* Ajuste automático de la altura */
+    word-wrap: break-word; /* Romper palabras largas */
+    backdrop-filter: blur(40px);
+    opacity: -10px;
+    
+  }
+  
+  /* Crear la punta de la burbuja en el lado izquierdo */
+  .mensaje2::after {
+    content: '';
+    position: absolute;
+    border: 15px solid transparent;
+    border-top-color: #00498d;  /* Color de la burbuja */
+    border-bottom: 0;
+    border-right: 0;
+    left: -3%;  /* Posicionar hacia la izquierda */
+    top: 20px;    /* Ajustar según donde quieras la punta */
+    overflow-wrap: break-word; 
+    align-self: self-end;
+  }
+  .cuerpoChat {
+    padding: 10px;
+    height: 82%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+}
+
+
+@media (max-width: 500px) {
+  .contenedorChat{
+    width: 80%;
+    padding: 5px;
+  }
+  .mensaje1, .mensaje2 {
+    font-size:x-small;
+  }
+  
+}
+
+
+/** estilo para el escroll*/
+
+.cuerpoChat::-webkit-scrollbar{ 
+ 
+  width: 5px;
+
+}
+.cuerpoChat::-webkit-scrollbar-track{
+  background: rgba(255, 255, 255, 0.096);
+}
+
+.cuerpoChat::-webkit-scrollbar-thumb{
+  background: rgba(0, 0, 0, 0.216);
+}
+
+
+/* estilos para el chat*/
+
+.nombreChat{
+  font-size: x-small;
+}
